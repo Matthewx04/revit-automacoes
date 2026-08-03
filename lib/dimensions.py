@@ -11,11 +11,20 @@ DEFAULT_OFFSET = 0.5
 
 
 def create_reference_array(grids):
-    """
-    Cria um ReferenceArray a partir de uma lista de grids.
-    """
-    pass
 
+    references = ReferenceArray()
+
+    for grid in grids:
+
+        try:
+            reference = grid.GetReference()
+
+            references.Append(reference)
+
+        except Exception as e:
+            print(grid.Name, e)
+
+    return references
 
 def create_dimension_line(grids, offset):
     """

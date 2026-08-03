@@ -1,30 +1,25 @@
 # -*- coding: utf-8 -*-
 
 from pyrevit import revit, forms
-from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory
+from Autodesk.Revit.UI import TaskDialog
+
+from grids import get_grids
+from dimensions import create_reference_array
+
 
 doc = revit.doc
 view = doc.ActiveView
 
-# Procura os eixos
-grids = (
-    FilteredElementCollector(doc, view.Id)
-    .OfCategory(BuiltInCategory.OST_Grids)
-    .WhereElementIsNotElementType()
-)
 
-# Transforma em uma lista de objetos Grid
-eixos = grids.ToElements()
+# Busca os grids da vista ativa
+grids = get_grids(doc, view)
 
-# Aqui vamos guardar os nomes
-nomes = []
 
-# Percorre cada eixo
-for eixo in eixos:
-    nomes.append(eixo.Name)
+# Cria as referências
+refs = create_reference_array(grids)
 
-# Mostra todos os nomes
-forms.alert(
-    "\n".join(nomes),
-    title="Eixos encontrados"
+
+TaskDialog.Show(
+    "Teste",
+    "Referências criadas: {}".format(refs.Size)
 )
