@@ -25,16 +25,21 @@ O projeto tem como objetivo agilizar processos repetitivos de modelagem, documen
 
 ## Estrutura
 
-Automacao.extension
-├── Automacao.tab
-│   ├── Cotagem.panel
+## Estrutura
+
+```text
+Automacao.extension/
+│
+├── Automacao.tab/
+│   │
+│   ├── Cotagem.panel/
 │   │   └── ...
 │   │
-│   ├── Identificacao.panel
-│   │   └── Numerar Elementos.pushbutton
+│   ├── Identificacao.panel/
+│   │   └── Numerar Elementos.pushbutton/
 │   │       ├── script.py
 │   │       ├── icon.png
-│   │       └── lib
+│   │       └── lib/
 │   │           ├── __init__.py
 │   │           ├── annotations.py
 │   │           ├── collectors.py
@@ -43,10 +48,11 @@ Automacao.extension
 │   │           ├── sorting.py
 │   │           └── validation.py
 │   │
-│   └── Modelagem.panel
+│   └── Modelagem.panel/
 │       └── ...
 │
 └── README.md
+```
 
 ## Ferramentas utilizadas
 
