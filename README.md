@@ -25,8 +25,6 @@ O projeto tem como objetivo agilizar processos repetitivos de modelagem, documen
 
 ## Estrutura
 
-## Estrutura
-
 ```text
 Automacao.extension/
 │
